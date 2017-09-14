@@ -9,4 +9,4 @@ export default () => (
   <Provider store={store}>
     <Root />
   </Provider>
-);
+); 
