@@ -1,10 +1,25 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { connect } from 'react-redux';
+import StyleSheet from '../../../styleSheets/components/login';
 
-export default class Dashboard extends React.Component {
+class Dashboard extends React.Component {
+
+    static navigationOptions = {
+        title: 'Dashboard'
+    };
+
+    constructor(){
+        super();
+    }  
 
     render() {
-        
-        return <Text>Dashboard</Text>
+ 
+        return <View style={StyleSheet.container}>
+                <Text>Dashboard</Text>
+        </View>
     }
-}
+} 
+  
+export default connect()(Dashboard)
+  

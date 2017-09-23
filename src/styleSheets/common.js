@@ -2,9 +2,11 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     'groupLabel': {
-        'color': "#fff"
+        'color': "#000",
+        'fontSize': 16,
     },
     'groupInput': {
-       'width': "200px"
+        'marginBottom': 10,
+        'height': 35,
     } 
-});
+}); 

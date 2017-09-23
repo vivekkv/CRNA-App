@@ -1,13 +1,25 @@
 import React from 'react';
 import Dashboard from '../dashboard';
 import { Text, View, Image } from 'react-native';
+import { connect } from 'react-redux';
 import StyleSheet from '../../../styleSheets/components/login';
 import LoginForm from './loginForm';
 import Intro from './intro';
 
-export default class Login extends React.Component {
+class Login extends React.Component {
+
+    static navigationOptions = {
+        title: 'Register'
+    };
+
+    constructor() {
+        super();
+    }
 
     render() {
+
+        const { navigate } = this.props.navigation;
+
         return <View style={StyleSheet.container}>
 
             <View style={StyleSheet.body}>
@@ -20,7 +32,7 @@ export default class Login extends React.Component {
 
                 <View style={StyleSheet.loginForm}>
 
-                    <LoginForm /> 
+                    <LoginForm navigate={navigate} />
 
                 </View>
 
@@ -28,4 +40,6 @@ export default class Login extends React.Component {
 
         </View>
     }
-} 
+}
+
+export default connect()(Login)

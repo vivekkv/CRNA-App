@@ -4,7 +4,7 @@ export default StyleSheet.create({
     'container': {
         'flex': 1,
         'justifyContent': 'flex-start',
-        'backgroundColor': "#34459e"
+        'backgroundColor': "#fff"
     },
     'header': {
         'flex': 1,
@@ -17,8 +17,8 @@ export default StyleSheet.create({
         'flex': 2,
     },
     'loginForm': {
-        'flex': 8,
-        'alignItems': 'center',
-        'justifyContent': 'center'
-    },
+        'flex': 6,
+        //'alignItems': 'center',
+        //'justifyContent': 'center'
+    }, 
 });
