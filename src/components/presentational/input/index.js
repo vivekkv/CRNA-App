@@ -4,7 +4,12 @@ import StyleSheet from '../../../styleSheets/common';
 
 export default class Input extends React.Component {
 
-    render() {
-        return <TextInput style={StyleSheet.groupInput} />  
+    constructor() {
+        super();
     }
-}
+
+    render() {
+
+        return <TextInput style={StyleSheet.groupInput} onChangeText={text => this.props.onChange(this.props.name, text)}  name={this.props.name} editable = {true}/>
+    }
+} 

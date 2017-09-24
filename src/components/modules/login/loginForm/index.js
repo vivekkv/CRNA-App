@@ -16,18 +16,24 @@ export default class LoginForm extends React.Component {
             <Form>
 
                 <FormGroup>
+
                     <Label>First name</Label>
-                    <Input></Input>
+                    <Input onChange={this.props.onChange} value={this.props.data.get("FirstName")} name={"Firstname"}></Input>
+
                 </FormGroup>
 
                 <FormGroup>
+
                     <Label>Date of birth</Label>
-                    <Input></Input>
+                    <Input onChange={this.props.onChange}></Input>
+
                 </FormGroup>
 
                 <FormGroup>
+
                     <Label>School Code</Label>
-                    <Input></Input>
+                    <Input onChange={this.props.onChange}></Input>
+  
                 </FormGroup>
 
                 <FormGroup>

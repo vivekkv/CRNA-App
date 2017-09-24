@@ -1,4 +1,4 @@
-import { fromJS, List } from 'immutable';
+import { fromJS } from 'immutable';
 
 var initialState = fromJS({
     'data': {
@@ -6,7 +6,7 @@ var initialState = fromJS({
     }
 });
 
-export default function lggerReducer(state = initialState, action) {
+export default function loggerReducer(state = initialState, action) {
 
     switch (action.type) {
 

@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import reducers from './reducers';
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware from 'redux-saga';  
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const middleWares = [sagaMiddleware];
@@ -10,6 +11,7 @@ const enhancers = [applyMiddleware(...middleWares)];
 export default function createAppStore(initialValue = {}) {
 
     let store;
+
 
     if (process.env.NODE_ENV === 'development') {
 
@@ -21,5 +23,8 @@ export default function createAppStore(initialValue = {}) {
         store = createStore(reducers(), initialValue, compose(...enhancers));
     }
 
+    sagaMiddleware.run(rootSaga).done.catch((error) => console.warn(error)); 
+
     return store
 }
+  
