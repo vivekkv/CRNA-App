@@ -8,6 +8,6 @@ const store = createStore();
 
 export default Root = () => {
 
-  return  <Provider store={store}><Router /></Provider>
-  
+  return (<Provider store={store}><Router /></Provider>);
+
 }

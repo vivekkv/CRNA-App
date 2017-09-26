@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import Auth from '../auth';
 import Promise from 'bluebird';
 import { restUrlBase } from './apiConfig';
 import { logError } from './errorLog';
@@ -16,7 +15,7 @@ export function httpRequest(url, options) {
         return new Promise((resolve, reject) => {
 
             fetch(url, options)
-                .then((response) => {
+                .then((response) => {  
 
                     if (response.status == 200 || response.status == 201) {
 

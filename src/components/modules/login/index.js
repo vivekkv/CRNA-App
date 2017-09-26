@@ -20,10 +20,6 @@ class Login extends React.Component {
 
     render() {
 
-        console.log(this.props)
-
-        const { navigate } = this.props.navigation;
-
         return <View style={StyleSheet.container}>
 
             <View style={StyleSheet.body}>
@@ -36,7 +32,7 @@ class Login extends React.Component {
 
                 <View style={StyleSheet.loginForm}>
 
-                    <LoginForm navigate={navigate} dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
+                    <LoginForm dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
 
                 </View>
 
@@ -44,25 +40,26 @@ class Login extends React.Component {
 
         </View>
     }
+
+   
 }
 
 const storeState = (state, ownProps) => {
 
-
     return {
 
-        'data': Map(state.auth.register.get("data"))    
+        'data': Map(state.auth.register.get("data"))
     }
+    
 }
 
-const storeDispatch = (dispatch, ownProps)  => {
+const storeDispatch = (dispatch, ownProps) => {
     return {
         dispatch,
-        onChange: function(name, value) {
-
+        onChange: function (name, value) {
             dispatch(ActionBuilder("AUTH", "REGISTER_ON_INPUT_CHANGE", { name, value }))
         }
     }
-};    
+};
 
 export default connect(storeState, storeDispatch)(Login)

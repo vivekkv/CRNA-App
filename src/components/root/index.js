@@ -3,28 +3,46 @@ import { connect } from 'react-redux';
 import { StyleSheet, View, Text } from 'react-native';
 import Home from '../modules/home';
 import Styles from '../../styleSheets/components/root';
+import ActionBuilder from '../../redux/actionBuilder';
 
 class Root extends React.Component {
 
-    render() {
+    static navigationOptions = {
+        title: 'TALENT ERP'
+    };
+
+
+    render() { 
+
         return (<View style={Styles.container}>
 
-            <Home IsAuthorized={false} />
+            <Home IsAuthorized={this.props.data.get("isAuthorized")} />
 
         </View>
         )
     }
+
+    componentDidMount() {
+
+        this.props.dispatch(ActionBuilder("ROOT", "PAGE_LOADED"));
+    }
 }
 
-const mapStateToProps = state => ({
+const storeState = (state, ownProps) => {
 
-});
+    return {
+        'data': state.auth.userInfo.get("data")
+    }
+}
 
-const mapDispatchToProps = props => ({
+const mapDispatchToProps = (dispatch, ownState) => {
 
-});
+    return {
+        dispatch
+    }
+}
 
 export default connect(
-    mapStateToProps,
+    storeState,
     mapDispatchToProps
 )(Root);   

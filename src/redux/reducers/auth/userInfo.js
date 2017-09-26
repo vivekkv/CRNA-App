@@ -4,13 +4,13 @@ import { buildNewState } from '../../reducerStateMiddleware';
 
 var initialState = fromJS({
     'data': {
-        'UserAuthenticated': false
+        'isAuthorized': false
     }
 });
   
-export default function registerReducer(state = initialState, action) {
+export default function userInfoReducer(state = initialState, action) {
 
-    const SET_FORM = ConstantBuilder("AUTH", "REGISTER_SET_FORM");
+    const SET_FORM = ConstantBuilder("AUTH", "USER_INFO_SET_ITEM");
 
     switch (action.type) {
 

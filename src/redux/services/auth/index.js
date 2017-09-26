@@ -9,13 +9,13 @@ import { callApi } from '../../../utils/request';
  * 
  * User Information send to server & save the user token into Async Storage
  */
-export function register(userData) {
+export function registerNewUser(userData) {
 
     return new Promise((resolve, reject) => {
 
         try {
 
-            resolve({ 'user_token': "dummy_user_token"  });
+            resolve({ 'success': true , "user_token": "vivek" });
         }
         catch (e) {
 

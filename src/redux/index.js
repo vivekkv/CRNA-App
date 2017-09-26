@@ -12,7 +12,6 @@ export default function createAppStore(initialValue = {}) {
 
     let store;
 
-
     if (process.env.NODE_ENV === 'development') {
 
         enhancers.push(devTools());
@@ -27,4 +26,3 @@ export default function createAppStore(initialValue = {}) {
 
     return store
 }
-  

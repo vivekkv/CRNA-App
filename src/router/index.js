@@ -1,8 +1,8 @@
 import { StackNavigator } from 'react-navigation';
-import LoginScreen from '../components/modules/login';
+import RootComponent from '../components/root';
 import Dashboard from '../components/modules/dashboard';
 
 export default RouterComponent = StackNavigator({
-    Login: { screen: LoginScreen },
+    Root: { screen: RootComponent },
     Dashboard: { screen: Dashboard }
 })     

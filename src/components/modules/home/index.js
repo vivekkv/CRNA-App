@@ -6,7 +6,7 @@ export default class Home extends React.Component {
 
     render() {
         
-        if(this.props.IsAuthorized) {
+        if(this.props.IsAuthorized == true) {
 
             return <Dashboard />
         }
