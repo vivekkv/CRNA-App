@@ -1,13 +1,16 @@
 import React from 'react';
 import ActionBuilder from '../../../../redux/actionBuilder';
-import { Text, View, TextInput, Button, Alert } from 'react-native';
+import { Text, View, TextInput, Alert } from 'react-native';
 import Form from '../../../presentational/form';
 import FormGroup from '../../../presentational/formGroup';
 import Input from '../../../presentational/input';
 import Label from '../../../presentational/label';
+import SubmitButton from '../../../presentational/button/submitButton';
 import StyleSheet from '../../../../styleSheets/components/login';
+import ButtonStyles from '../../../../styleSheets/components/presentational/button.js';
 import CommonStyleSheet from '../../../../styleSheets/common';
 import Dashboard from '../../../modules/dashboard';
+
 
 export default class LoginForm extends React.Component {
 
@@ -36,14 +39,13 @@ export default class LoginForm extends React.Component {
                     <Label>School Code</Label>
                     <Input onChange={this.props.onChange} value={this.props.data.get("SchoolCode")} name={"SchoolCode"}></Input>
 
-                </FormGroup>
+                </FormGroup> 
 
-                <FormGroup>
+                <FormGroup> 
 
-                    <Button
+                    <SubmitButton
                         onPress={this.onRegister.bind(this)}
                         title="Register"
-                        color="#03a9f4"
                         accessibilityLabel="Register"
                     />
 

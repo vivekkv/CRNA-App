@@ -3,8 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     'container': {
         'flex': 1,
-        'justifyContent': 'flex-start',
-        'backgroundColor': "#fff"
+        'justifyContent': 'flex-start'
     },
     'header': {
         'flex': 1,
@@ -17,8 +16,6 @@ export default StyleSheet.create({
         'flex': 2,
     },
     'loginForm': {
-        'flex': 6,
-        //'alignItems': 'center',
-        //'justifyContent': 'center'
+        'flex': 6
     }, 
 });

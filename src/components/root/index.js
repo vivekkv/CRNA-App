@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, Text } from 'react-native';
 import Home from '../modules/home';
 import Styles from '../../styleSheets/components/root';
 import ActionBuilder from '../../redux/actionBuilder';
@@ -14,11 +14,11 @@ class Root extends React.Component {
 
     render() { 
 
-        return (<View style={Styles.container}>
+        return (<ScrollView style={Styles.container}>
 
             <Home IsAuthorized={this.props.data.get("isAuthorized")} />
 
-        </View>
+        </ScrollView>
         )
     }
 

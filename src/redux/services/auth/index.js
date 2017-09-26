@@ -26,6 +26,12 @@ export function registerNewUser(userData) {
     });
 }
 
+/**
+ * 
+ * @param {*} schoolCode 
+ * 
+ * get base uri to request local api from talent erp main server
+ */
 export async function getSchoolBaseUrlBySchoolCode(schoolCode) {
     
 
