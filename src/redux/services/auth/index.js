@@ -15,7 +15,7 @@ export function registerNewUser(userData) {
 
         try {
 
-            resolve({ 'success': true , "user_token": "vivek" });
+            resolve({ 'success': true, "user_token": "vivek" });
         }
         catch (e) {
 
@@ -24,4 +24,27 @@ export function registerNewUser(userData) {
         }
 
     });
+}
+
+export async function getSchoolBaseUrlBySchoolCode(schoolCode) {
+    
+
+    if (schoolCode) {
+
+        callApi("/getBaseUrl", {
+
+        }).then((response) => {
+
+            return { 'success': true, 'baseUrl': "http://localhost:80" };
+
+        }).catch((e) => {
+
+            logError(e);
+            return { 'success': true, 'error': e, 'baseUrl': "http://localhost:80" };
+
+        });
+
+    }
+
+    return null;
 }
