@@ -5,13 +5,18 @@ import { Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import ActionBuilder from '../../../redux/actionBuilder';
 import StyleSheet from '../../../styleSheets/components/login';
-import LoginForm from './loginForm';
+import Register from './register';
+import NavBar from './navBar';
+import Header from './header';
 import Intro from './intro';
 
 class Login extends React.Component {
 
     static navigationOptions = {
-        title: 'Register'
+        'title': 'Re',
+        'headerStyle': {
+            'backgroundColor': 'blue'
+        }
     };
 
     constructor() {
@@ -22,26 +27,20 @@ class Login extends React.Component {
 
         return <View style={StyleSheet.container}>
 
-            <View style={StyleSheet.body}>
+            <NavBar />  
 
-                <View style={StyleSheet.intro}>
+            <Header />
 
-                    <Intro />
+            <View style={StyleSheet.loginForm}>
 
-                </View>
-
-                <View style={StyleSheet.loginForm}>
-
-                    <LoginForm dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
-
-                </View>
+                <Register dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
 
             </View>
 
         </View>
     }
 
-   
+
 }
 
 const storeState = (state, ownProps) => {
@@ -50,16 +49,19 @@ const storeState = (state, ownProps) => {
 
         'data': Map(state.auth.register.get("data"))
     }
-    
+
 }
 
 const storeDispatch = (dispatch, ownProps) => {
     return {
         dispatch,
         onChange: function (name, value) {
+
+            console.log("er")
+
             dispatch(ActionBuilder("AUTH", "REGISTER_ON_INPUT_CHANGE", { name, value }))
         }
     }
 };
 
-export default connect(storeState, storeDispatch)(Login)
+export default connect(storeState, storeDispatch)(Login);

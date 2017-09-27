@@ -1,10 +1,12 @@
 import { fromJS, List } from 'immutable';
 import ConstantBuilder from '../../constantBuilder';
 import { buildNewState } from '../../reducerStateMiddleware';
+import moment from 'moment';
 
 var initialState = fromJS({
     'data': {
-        'UserAuthenticated': false
+        'UserAuthenticated': false,
+        'DOB': moment()  
     }
 });
   

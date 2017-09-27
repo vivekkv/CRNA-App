@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, ScrollView, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Home from '../modules/home';
 import Styles from '../../styleSheets/components/root';
 import ActionBuilder from '../../redux/actionBuilder';
@@ -8,17 +8,23 @@ import ActionBuilder from '../../redux/actionBuilder';
 class Root extends React.Component {
 
     static navigationOptions = {
-        title: 'TALENT ERP'
+        'title': '',
+        'headerStyle': {
+            'backgroundColor': 'blue'
+        }
     };
 
+    render() {
 
-    render() { 
-
-        return (<ScrollView style={Styles.container}>
+        return (<View style={{
+            flex: 1,
+            padding: 0,
+            margin: 0
+        }}>
 
             <Home IsAuthorized={this.props.data.get("isAuthorized")} />
 
-        </ScrollView>
+        </View>
         )
     }
 

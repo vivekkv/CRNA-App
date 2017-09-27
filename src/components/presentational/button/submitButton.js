@@ -1,16 +1,13 @@
 import React from 'react';
-import { Button } from 'react-native';
+import {  Text, TouchableOpacity } from 'react-native';
 import StyleSheet from '../../../styleSheets/components/presentational/button';
 
 export default class SubmitButton extends React.Component {
 
     render() {
-        return <Button
-            onPress = {this.props.onPress}
-            title = {this.props.title}
-            accessibilityLabel = {this.props.label}
+        return <TouchableOpacity
+            onPress={this.props.onPress}
             style={StyleSheet.button}
-        ></Button>  
+        ><Text style={StyleSheet.button_text}>{this.props.title}</Text></TouchableOpacity>
     }
-
-}
+} 
