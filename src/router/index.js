@@ -20,7 +20,7 @@ export default RouterComponent = StackNavigator({
 
 },
     {
-        'initialRouteName': 'Dashboard', 
+        'initialRouteName': 'Root', 
         'headerMode': 'none', 
         'mode': 'card'
         /*
