@@ -22,41 +22,33 @@ export default class LoginForm extends React.Component {
             <Form>
                 <FormGroup>
 
-                    <Label>Name</Label>
-
-                    <Input onChange={this.props.onChange} value={this.props.data.get("FirstName")} name={"Firstname"}></Input>
+                    <Input placeholder="Enter name" onChange={this.props.onChange} value={this.props.data.get("FirstName")} name={"Firstname"}></Input>
 
                 </FormGroup>
 
                 <FormGroup>
 
-                    <Label>Reference Number</Label>
-
-                    <Input onChange={this.props.onChange} value={this.props.data.get("ReferenceNumber")} name={"ReferenceNumber"}></Input>
+                    <Input placeholder="Enter Application number" onChange={this.props.onChange} value={this.props.data.get("ApplicationNo")} name={"ApplicationNo"}></Input>
 
                 </FormGroup>
 
                 <FormGroup>
 
-                    <Label>School Code</Label>
-
-                    <Input onChange={this.props.onChange} value={this.props.data.get("SchoolCode")} name={"SchoolCode"}></Input>
+                    <Input placeholder="Enter school code" onChange={this.props.onChange} value={this.props.data.get("SchoolCode")} name={"SchoolCode"}></Input>
 
                 </FormGroup>
 
                 <FormGroup>
 
-                    <Label>Date Of Birth</Label>
-
-                    <DatePicker onChange={this.props.onChange} name="DOB" value={this.props.data.get("DOB")}></DatePicker>
+                    <DatePicker placeholder="Select date of birth" onChange={this.props.onChange} name="DOB" value={this.props.data.get("DOB")}></DatePicker>
 
                 </FormGroup>
 
                 <FormGroup>
 
                     <SubmitButton
-                        onPress={this.onRegister.bind(this)}
-                        title={<Text><Icon name="graduation-cap" size={30} color="#000" style={{ 'textAlign': "center", 'fontSize': 20 }} /> REGISTER</Text>}
+                        onPress={this.onRegister.bind(this)} 
+                        title={<Text> REGISTER WITH TALENT ERP</Text>}
                         accessibilityLabel="Register"
                     />
 

@@ -6,21 +6,17 @@ export default StyleSheet.create({
         'fontSize': 16,
     },
     'groupInput': {
-        'height': 45,
+        'height': 60,
         'width': 300,
         'marginBottom': 5,  
         'borderWidth': 1,
-        'borderTopWidth': 0,  
-        'borderLeftWidth': 0,  
-        'borderRightWidth': 0,
         'borderColor': '#d6d6d6', 
-        'padding': 5,
-        'color': '#000',
+        'backgroundColor': "#fff",
+        'padding': 10, 
+        'color': '#000'
     },
     'groupDatePicker': {
         'marginBottom': 10, 
-        'width': 300,
-        'borderWidth': 0,
-        'padding': 5, 
+        'width': 305, 
     }
 }); 

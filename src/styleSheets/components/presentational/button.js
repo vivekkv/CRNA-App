@@ -5,12 +5,13 @@ export default StyleSheet.create({
         'alignItems': 'center',
         'justifyContent': 'center',
         'padding': 20,
-        'backgroundColor': '#fafafa',
+        'backgroundColor': '#364c8e',
         'borderWidth': 1,
         'borderColor': '#cecece',
         'borderRadius': 0
     },
     'button_text': {
-        'fontSize': 20,
+        'fontSize': 16,
+        'color': "#e9edf0"
     }
 });  

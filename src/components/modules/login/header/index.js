@@ -8,6 +8,8 @@ export default class Header extends React.Component {
 
         return <View style={StyleSheet.header}>
 
-        </View>
+            <Text style={StyleSheet.header_text}>Register</Text>
+
+        </View> 
     }
 }

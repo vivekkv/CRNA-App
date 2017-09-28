@@ -31,11 +31,11 @@ export default class MyDatePicker extends Component {
                         'display': 'none'
                     },
                     dateInput: {
-                        'borderTopWidth': 0,
-                        'borderLeftWidth': 0,
-                        'borderRightWidth': 0,
-                        'borderColor': '#d6d6d6'
-                    }
+                        'borderColor': '#d6d6d6',
+                        'backgroundColor': "#fff",
+                        'borderWidth': 1,
+                        'height': 100
+                     }
                     // ... You can check the source to find the other keys.
                 }}
             //minDate="2016-05-01"

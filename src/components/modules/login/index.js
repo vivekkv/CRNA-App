@@ -6,9 +6,11 @@ import { connect } from 'react-redux';
 import ActionBuilder from '../../../redux/actionBuilder';
 import StyleSheet from '../../../styleSheets/components/login';
 import Register from './register';
+import Footer from './footer';
 import NavBar from './navBar';
 import Header from './header';
 import Intro from './intro';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Login extends React.Component {
 
@@ -27,20 +29,20 @@ class Login extends React.Component {
 
         return <View style={StyleSheet.container}>
 
-            <NavBar />   
+            <NavBar />
 
             <Header />
-
-            <View style={StyleSheet.loginForm}>
-
+ 
+            <Icon name="graduation-cap" size={30} color="#1c3aa9" style={{ 'textAlign': "center", 'fontSize': 50, 'marginTop': 30 }} />
+ 
+            <View style={StyleSheet.loginForm}> 
+ 
                 <Register dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
 
             </View>
 
         </View>
     }
-
-
 }
 
 const storeState = (state, ownProps) => {
