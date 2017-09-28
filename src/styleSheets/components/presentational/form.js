@@ -6,6 +6,6 @@ export default StyleSheet.create({
         'padding': 10,
     },
     'formGroup': {
-
+        'marginBottom': 5
     }
 }); 

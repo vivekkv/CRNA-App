@@ -17,7 +17,7 @@ export default StyleSheet.create({
         'flex': 1,
         'backgroundColor': "#1c3aa9",
         'borderBottomWidth': 2,
-        'borderBottomColor': 'red'
+        'borderBottomColor': '#ff9813'
     },
     'footer': {
         'flex': 1,

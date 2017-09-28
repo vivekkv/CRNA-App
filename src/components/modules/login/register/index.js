@@ -13,59 +13,50 @@ import Dashboard from '../../../modules/dashboard';
 import DatePicker from '../../../presentational/datepicker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 export default class LoginForm extends React.Component {
 
     render() {
 
         return <View>
 
-            {/*<Icon name="graduation-cap" size={30} color="#000" style={{ 'textAlign': "center", 'fontSize': 50 }}/> */}
-
             <Form>
-
                 <FormGroup>
 
-                    <Label>First name</Label>
+                    <Label>Name</Label>
+
                     <Input onChange={this.props.onChange} value={this.props.data.get("FirstName")} name={"Firstname"}></Input>
 
                 </FormGroup>
 
-
                 <FormGroup>
 
-                    <Label>Last name</Label>
-                    <Input onChange={this.props.onChange} value={this.props.data.get("LastName")} name={"LastName"}></Input>
+                    <Label>Reference Number</Label>
 
-                </FormGroup>
-
-                <FormGroup>
-
-                    <Label>Age</Label>
-                    <Input onChange={this.props.onChange} value={this.props.data.get("Age")} name={"Age"}></Input>
+                    <Input onChange={this.props.onChange} value={this.props.data.get("ReferenceNumber")} name={"ReferenceNumber"}></Input>
 
                 </FormGroup>
 
                 <FormGroup>
 
                     <Label>School Code</Label>
+
                     <Input onChange={this.props.onChange} value={this.props.data.get("SchoolCode")} name={"SchoolCode"}></Input>
 
                 </FormGroup>
 
                 <FormGroup>
 
-                    <Label>Date of birth</Label>
+                    <Label>Date Of Birth</Label>
+
                     <DatePicker onChange={this.props.onChange} name="DOB" value={this.props.data.get("DOB")}></DatePicker>
 
                 </FormGroup>
-
 
                 <FormGroup>
 
                     <SubmitButton
                         onPress={this.onRegister.bind(this)}
-                        title={<Text><Icon name="graduation-cap" size={30} color="#fff" style={{ 'textAlign': "center", 'fontSize': 20 }} /> Register</Text>}
+                        title={<Text><Icon name="graduation-cap" size={30} color="#000" style={{ 'textAlign': "center", 'fontSize': 20 }} /> REGISTER</Text>}
                         accessibilityLabel="Register"
                     />
 

@@ -16,11 +16,11 @@ export default StyleSheet.create({
         'alignContent': 'center'
     },
     'navBar': {
-        'flex': 1,
+        'flex': 3,
         'backgroundColor': "#1c3aa9",
     },
     'header': {  
-        'flex': 2,
+        'flex': 1,
         'backgroundColor': "#2a56c6",
     }
 });

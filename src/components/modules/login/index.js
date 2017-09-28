@@ -27,7 +27,7 @@ class Login extends React.Component {
 
         return <View style={StyleSheet.container}>
 
-            <NavBar />  
+            <NavBar />   
 
             <Header />
 

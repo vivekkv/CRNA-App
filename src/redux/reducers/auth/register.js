@@ -6,7 +6,7 @@ import moment from 'moment';
 var initialState = fromJS({
     'data': {
         'UserAuthenticated': false,
-        'DOB': moment()  
+        //'DOB': moment()  
     }
 });
   

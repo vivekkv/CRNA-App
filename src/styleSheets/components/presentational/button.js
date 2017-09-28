@@ -4,11 +4,13 @@ export default StyleSheet.create({
     'button': {
         'alignItems': 'center',
         'justifyContent': 'center',
-        'padding': 10,  
-        'backgroundColor': '#424242' 
-    },  
+        'padding': 20,
+        'backgroundColor': '#fafafa',
+        'borderWidth': 1,
+        'borderColor': '#cecece',
+        'borderRadius': 0
+    },
     'button_text': {
         'fontSize': 20,
-        'color': '#fff'
-    }  
-}); 
+    }
+});  

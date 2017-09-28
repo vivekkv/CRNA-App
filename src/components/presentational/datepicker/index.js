@@ -6,8 +6,9 @@ import moment from 'moment';
 export default class MyDatePicker extends Component {
 
     constructor(props) {
+
         super(props)
-        //this.state = { date: "2016-05-15" }
+
     }
 
     render() {
@@ -25,11 +26,23 @@ export default class MyDatePicker extends Component {
                 format="YYYY-MM-DD"
                 onDateChange={onDateChange}
                 style={StyleSheet.groupDatePicker}
-                //minDate="2016-05-01"
-                //maxDate="2016-06-01"
-                //confirmBtnText="Confirm"
-                //cancelBtnText="Cancel"
-                //date=this.state.date
+                customStyles={{
+                    dateIcon: {
+                        'display': 'none'
+                    },
+                    dateInput: {
+                        'borderTopWidth': 0,
+                        'borderLeftWidth': 0,
+                        'borderRightWidth': 0,
+                        'borderColor': '#d6d6d6'
+                    }
+                    // ... You can check the source to find the other keys.
+                }}
+            //minDate="2016-05-01"
+            //maxDate="2016-06-01"
+            //confirmBtnText="Confirm"
+            //cancelBtnText="Cancel"
+            //date=this.state.date
             />
         )
     }
