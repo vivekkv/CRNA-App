@@ -8,7 +8,7 @@ export default class NavBar extends React.Component {
 
         return <View style={StyleSheet.footer}>
 
-            <Text style={{ 'textAlign': 'center', 'color': "#fff", 'marginTop': 10 }}>@ TALENT ERP</Text>
+            <Text style={{ 'textAlign': 'center', 'color': "#000", 'marginTop': 10 }}>@ TALENT ERP</Text>
 
         </View>
     }

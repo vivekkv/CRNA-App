@@ -4,22 +4,17 @@ import Promise from 'bluebird';
 
 export async function setLocalStorageItem(name, data) {
 
-    return new Promise((resolve, reject) => {
+    try {
 
-        try {
+        await AsyncStorage.setItem(name, data);
+        return null;
 
-            AsyncStorage.setItem(name, data);
-            resolve();
+    }
+    catch (e) {
 
-        }
-        catch (e) {
-
-            logError(e);
-            reject(e);
-        }
-
-    });
-
+        logError(e);
+        return e;
+    }
 }
 
 export function getLocalStorageItem(name) {
@@ -40,4 +35,9 @@ export function getLocalStorageItem(name) {
         }
 
     });
+}
+
+export async function clearStorage() {
+
+    return AsyncStorage.clear();
 }

@@ -17,7 +17,9 @@ export default StyleSheet.create({
         'flex': 2,
         "justifyContent": "center",
         "flexDirection": "row",
-        "backgroundColor": "#237ae8",
+        "backgroundColor": "#1c3aa9",
+        'borderBottomWidth': 2,
+        'borderBottomColor': "red"
     },
     'SchoolName': {
         'flex': 1,
@@ -69,8 +71,8 @@ export default StyleSheet.create({
         'marginTop': 5,
         'flex': 1,
         "justifyContent": "center",
-        "flexDirection": "column",
-        "backgroundColor": "#237ae8",
+        "flexDirection": "column", 
+        "backgroundColor": "#fff", 
         "flexDirection": "row"
     },
     "footerItem": {

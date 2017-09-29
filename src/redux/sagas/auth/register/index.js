@@ -15,7 +15,7 @@ const registerSaga = function* registerSaga() {
 
         while (true) {
 
-            yield take(ConstantBuilder("AUTH", "REGISTER"));
+            const { navigate } = yield take(ConstantBuilder("AUTH", "REGISTER"));
 
             let state = yield select(getStateData);
             let response = yield call(registerNewUser, {
@@ -26,15 +26,14 @@ const registerSaga = function* registerSaga() {
 
             if (response.success) {
 
-                yield call(setLocalStorageItem, "user_token", response.user_token);
-                yield call(setLocalStorageItem, "isAuthorized", true);
+                yield call(setLocalStorageItem, "userInfo", JSON.stringify({ "isAuthorized": true, "token": response.user_token }));
                 yield put(ActionBuilder("AUTH", "USER_INFO_SET_ITEM", { data: { 'isAuthorized': true, 'user_token': response.user_token } }));
+                navigate("Dashboard")
 
             } else {
 
                 logError(response.error);
             }
-
         }
     }
     catch (e) {

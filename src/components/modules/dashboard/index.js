@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import StyleSheet from '../../../styleSheets/components/dashboard';
+import ActionBuilder from '../../../redux/actionBuilder';
 import NavBar from './narbar';
 import Footer from './footer';
 import Content from './content';
@@ -9,6 +10,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Map } from 'immutable';
 
 class Dashboard extends React.Component {
+
+    static navigationOptions = {
+        header: null
+    };
 
     render() {
 
@@ -40,8 +45,8 @@ class Dashboard extends React.Component {
 
                 <View style={StyleSheet.footerItem}>
 
-                    <Icon name="power-off" size={30} color="#fff" style={{ "justifyContent": "flex-end" }} />
-
+                    <TouchableOpacity onPress={this.props.onLogOff}><Icon name="power-off" size={30} color="#000" style={{ "justifyContent": "flex-end" }} /></TouchableOpacity>
+ 
                 </View>
 
             </View>
@@ -59,7 +64,11 @@ const storeState = (state, ownProps) => {
 
 const storeDispatch = (dispatch, ownProps) => {
     return {
-        dispatch
+        dispatch,
+        onLogOff: () => {
+            
+            dispatch(ActionBuilder("AUTH", "LOGOFF"));
+        }
     }
 };
 

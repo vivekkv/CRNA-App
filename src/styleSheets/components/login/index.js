@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     'container': {
-        'backgroundColor': "#e9edf0",
         'flex': 1,
         'padding': 0,
         'margin': 0
@@ -23,7 +22,7 @@ export default StyleSheet.create({
         'flex': 2
     },
     'header': {
-        'flex': 1,
+        'flex': 2,
         'backgroundColor': "#1c3aa9",
         'borderBottomWidth': 2,
         'borderBottomColor': "red"
@@ -36,7 +35,7 @@ export default StyleSheet.create({
     },
     'header_text': {
         'color': "#fff",
-        'marginTop': 10,
+        'marginTop': 30,
         'padding': 10
     }
 });

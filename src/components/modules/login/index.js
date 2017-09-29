@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map } from 'immutable';
 import Dashboard from '../dashboard';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import ActionBuilder from '../../../redux/actionBuilder';
 import StyleSheet from '../../../styleSheets/components/login';
@@ -16,10 +16,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 class Login extends React.Component {
 
     static navigationOptions = {
-        'title': 'Re',
-        'headerStyle': {
-            'backgroundColor': 'blue'
-        }
+        header: null
     };
 
     constructor() {
@@ -29,20 +26,19 @@ class Login extends React.Component {
     render() {
 
         return <View style={StyleSheet.container}>
-{/*
-            <NavBar />*/}
 
             <Header />
 
             <View style={StyleSheet.loginForm}>
 
-                <Register dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} /> 
+                <Register dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
 
             </View>
 
             <Footer>
 
                 <RegisterButton
+                    onPress={this.onRegister.bind(this)}
                     title={<Text> REGISTER WITH TALENT ERP</Text>}
                     accessibilityLabel="Register"
                 />
@@ -50,6 +46,29 @@ class Login extends React.Component {
             </Footer>
 
         </View>
+    }
+
+    onRegister() {
+
+        if (this.props.data.get("Firstname") == null) {
+
+            Alert.alert("Please enter your firstname ");
+            return false;
+        }
+
+        if (this.props.data.get("DOB") == null) {
+
+            Alert.alert("Please enter your date of birth ");
+            return false;
+        }
+
+        if (this.props.data.get("SchoolCode") == null) {
+
+            Alert.alert("Please enter your school code ");
+            return false;
+        }
+
+        this.props.dispatch(ActionBuilder("AUTH", "REGISTER", { navigate: this.props.navigation.navigate }));
     }
 }
 
@@ -66,8 +85,6 @@ const storeDispatch = (dispatch, ownProps) => {
     return {
         dispatch,
         onChange: function (name, value) {
-
-            console.log("er")
 
             dispatch(ActionBuilder("AUTH", "REGISTER_ON_INPUT_CHANGE", { name, value }))
         }

@@ -1,30 +1,31 @@
-import { StackNavigator } from 'react-navigation';
 import RootComponent from '../components/root';
 import Dashboard from '../components/modules/dashboard';
 
-const Routes = {
-    'Root': {
-        'name': 'Root',
-        'description': 'index root',
-        'screen': RootComponent,
-    },
-    'Dashboard': {
-        'name': 'Dashboard',
-        'description': 'dashboard',
-        'screen': Dashboard,
-    },
-}
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
-export default RouterComponent = StackNavigator({
-    ...Routes
-},
-    {
-        'initialRouteName': 'Dashboard', 
-        'headerMode': 'none',
-        'mode': 'card'
-        /*
-       * Use modal on iOS because the card mode comes from the right,
-       * which conflicts with the drawer example gesture
-       */
-        // mode: Platform.OS === 'ios' ? 'modal' : 'card',
-    });
+export const AppNavigator = StackNavigator({
+    RootComponent: {
+        getScreen: () => require("../components/root").default
+    },
+    Dashboard: { screen: Dashboard }
+});
+
+const AppWithNavigationState = ({ dispatch, nav }) => (
+    <AppNavigator   />
+);
+
+AppWithNavigationState.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    nav: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = state => ({
+    nav: {
+
+    }
+});
+
+export default connect(mapStateToProps)(AppWithNavigationState);    

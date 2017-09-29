@@ -1,6 +1,6 @@
 import React from 'react';
 import ActionBuilder from '../../../../redux/actionBuilder';
-import { Text, View, TextInput, Alert, TouchableHighlight } from 'react-native';
+import { Text, View, TextInput, TouchableHighlight } from 'react-native';
 import Form from '../../../presentational/form';
 import FormGroup from '../../../presentational/formGroup';
 import Input from '../../../presentational/input';
@@ -52,26 +52,5 @@ export default class LoginForm extends React.Component {
         </View>
     }
 
-    onRegister() {
-
-        if (this.props.data.get("Firstname") == null) {
-
-            Alert.alert("Please enter your firstname ");
-            return false;
-        }
-
-        if (this.props.data.get("DOB") == null) {
-
-            Alert.alert("Please enter your date of birth ");
-            return false;
-        }
-
-        if (this.props.data.get("SchoolCode") == null) {
-
-            Alert.alert("Please enter your school code ");
-            return false;
-        }
-
-        this.props.dispatch(ActionBuilder("AUTH", "REGISTER"));
-    }
+    
 }

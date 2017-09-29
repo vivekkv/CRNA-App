@@ -8,24 +8,16 @@ import ActionBuilder from '../../redux/actionBuilder';
 class Root extends React.Component {
 
     static navigationOptions = {
-        'title': '',
-        'headerStyle': {
-            'backgroundColor': 'blue'
-        }
+         header: null
     };
 
-    render() {
+    render() { 
 
-        return (<View style={{
-            flex: 1,
-            padding: 0,
-            margin: 0
-        }}>
-
-            <Home IsAuthorized={this.props.data.get("isAuthorized")} />
-
-        </View>
-        )
+        return (<View style={{ flex: 1, padding: 0, margin: 0 }}>
+  
+            <Home IsAuthorized={this.props.data.get("isAuthorized")} {...this.props} />
+    
+        </View>)
     }
 
     componentDidMount() {
@@ -35,7 +27,7 @@ class Root extends React.Component {
 }
 
 const storeState = (state, ownProps) => {
-
+    
     return {
         'data': state.auth.userInfo.get("data")
     }
