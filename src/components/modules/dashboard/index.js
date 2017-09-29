@@ -19,9 +19,7 @@ class Dashboard extends React.Component {
             <NavBar />
 
             <Content />
-
-            <Footer />
-
+ 
         </View>
     }
 }

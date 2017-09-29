@@ -6,8 +6,8 @@ export default StyleSheet.create({
         'fontSize': 16,
     },
     'groupInput': {
-        'height': 60,
-        'width': 300,
+        'height': 50,
+        'width': 300, 
         'marginBottom': 5,  
         'borderWidth': 1,
         'borderColor': '#d6d6d6', 

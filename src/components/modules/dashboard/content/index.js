@@ -9,7 +9,7 @@ export default class Content extends React.Component {
     render() {
 
         return <View style={StyleSheet.content}>
-
+{/*
             <View style={StyleSheet.application_status_bar}>
 
                 <ApplicationStatusBar />
@@ -27,7 +27,7 @@ export default class Content extends React.Component {
 
                 <ApplicationInfo />
 
-            </View>
+            </View>*/} 
 
         </View>
     }

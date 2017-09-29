@@ -14,10 +14,10 @@ export default StyleSheet.create({
         'padding': 10
     },
     'navBar': {
-        'flex': 1,
+        'flex': 2, 
         'backgroundColor': "#1c3aa9",
-        'borderBottomWidth': 2,
-        'borderBottomColor': '#ff9813'
+        'borderBottomWidth': 2, 
+        'borderBottomColor': 'red' 
     },
     'footer': {
         'flex': 1,

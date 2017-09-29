@@ -5,6 +5,7 @@ import { Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import ActionBuilder from '../../../redux/actionBuilder';
 import StyleSheet from '../../../styleSheets/components/login';
+import RegisterButton from '../../presentational/button/registerButton';
 import Register from './register';
 import Footer from './footer';
 import NavBar from './navBar';
@@ -28,18 +29,25 @@ class Login extends React.Component {
     render() {
 
         return <View style={StyleSheet.container}>
-
-            <NavBar />
+{/*
+            <NavBar />*/}
 
             <Header />
- 
-            <Icon name="graduation-cap" size={30} color="#1c3aa9" style={{ 'textAlign': "center", 'fontSize': 50, 'marginTop': 30 }} />
- 
-            <View style={StyleSheet.loginForm}> 
- 
-                <Register dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} />
+
+            <View style={StyleSheet.loginForm}>
+
+                <Register dispatch={this.props.dispatch} onChange={this.props.onChange} data={this.props.data} /> 
 
             </View>
+
+            <Footer>
+
+                <RegisterButton
+                    title={<Text> REGISTER WITH TALENT ERP</Text>}
+                    accessibilityLabel="Register"
+                />
+
+            </Footer>
 
         </View>
     }

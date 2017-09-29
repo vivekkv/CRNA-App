@@ -8,7 +8,7 @@ export default StyleSheet.create({
         'margin': 0
     },
     'loginForm': {
-        'flex': 10,
+        'flex': 12,
         'padding': 0,
         'margin': 0,
         'alignItems': 'center',
@@ -17,28 +17,26 @@ export default StyleSheet.create({
     },
     'navBar': {
         'flex': 1,
-         'backgroundColor': "#1c3aa9",
+        'backgroundColor': "#1c3aa9",
     },
     'footer': {
-        'flex': 1,
-        'backgroundColor': '#424242'
+        'flex': 2
     },
     'header': {
-        'flex': 2,
-        'backgroundColor': "#3555cc",
-        'borderBottomWidth': 2, 
-        'borderBottomColor': 'red'
+        'flex': 1,
+        'backgroundColor': "#1c3aa9",
+        'borderBottomWidth': 2,
+        'borderBottomColor': "red"
     },
-    'navBarText': {  
+    'navBarText': {
         'textAlign': 'center',
-        'fontSize': 30, 
-        'marginTop': 30, 
-        'color': '#fff'  
+        'fontSize': 30,
+        'marginTop': 30,
+        'color': '#fff'
     },
     'header_text': {
         'color': "#fff",
-        'marginTop': 20,
+        'marginTop': 10,
         'padding': 10
     }
-      
 });
