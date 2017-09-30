@@ -12,7 +12,7 @@ export default StyleSheet.create({
     'navBar': {
         'flex': 1,
         'backgroundColor': "#fff",
-    }, 
+    },
     'schoolNameWrapper': {
         'flex': 2,
         "justifyContent": "center",
@@ -71,9 +71,9 @@ export default StyleSheet.create({
         'marginTop': 5,
         'flex': 1,
         "justifyContent": "center",
-        "flexDirection": "column", 
-        "backgroundColor": "#fff", 
-        "flexDirection": "row"
+        "flexDirection": "column",
+        "flexDirection": "row",
+        "backgroundColor": "#1c3aa9",
     },
     "footerItem": {
         "flex": 3,

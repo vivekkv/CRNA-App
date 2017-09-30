@@ -8,7 +8,8 @@ var initialState = fromJS({
         'appStatus': "Approved",
         "schoolName": "TOC H",
         "name": "Vivek",
-        "className": "II"
+        "className": "II",
+        "division": "A"
     }
 });
   

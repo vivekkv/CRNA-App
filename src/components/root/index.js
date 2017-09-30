@@ -4,19 +4,20 @@ import { StyleSheet, View, Text } from 'react-native';
 import Home from '../modules/home';
 import Styles from '../../styleSheets/components/root';
 import ActionBuilder from '../../redux/actionBuilder';
+import { setNavigation } from '../../utils/navigation';
 
 class Root extends React.Component {
 
     static navigationOptions = {
-         header: null
+        header: null
     };
 
-    render() { 
+    render() {
 
         return (<View style={{ flex: 1, padding: 0, margin: 0 }}>
-  
+
             <Home IsAuthorized={this.props.data.get("isAuthorized")} {...this.props} />
-    
+
         </View>)
     }
 
@@ -27,7 +28,7 @@ class Root extends React.Component {
 }
 
 const storeState = (state, ownProps) => {
-    
+        
     return {
         'data': state.auth.userInfo.get("data")
     }

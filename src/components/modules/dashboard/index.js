@@ -33,7 +33,8 @@ class Dashboard extends React.Component {
             <View style={StyleSheet.userInfoWrapper}>
 
                 <Text style={StyleSheet.userInfoLabelHeader}>{this.props.data.get("name")}</Text>
-                <Text style={StyleSheet.userInfoValue}>{this.props.data.get("className")}</Text>
+                <Text style={StyleSheet.userInfoValue}>{this.props.data.get("className")}({this.props.data.get("division")})</Text>
+                <Text style={StyleSheet.userInfoValue}>Admission No:- 2522</Text> 
 
             </View>
 
@@ -45,13 +46,20 @@ class Dashboard extends React.Component {
 
                 <View style={StyleSheet.footerItem}>
 
-                    <TouchableOpacity onPress={this.props.onLogOff}><Icon name="power-off" size={30} color="#000" style={{ "justifyContent": "flex-end" }} /></TouchableOpacity>
- 
+                    <TouchableOpacity onPress={this.onLogOff.bind(this)}>
+                        <Icon name="power-off" size={30} color="#fff" style={{ "justifyContent": "flex-end" }} />
+                    </TouchableOpacity>
+
                 </View>
 
             </View>
 
         </View>
+    }
+
+    onLogOff() {
+
+        this.props.dispatch(ActionBuilder("AUTH", "LOGOFF"));
     }
 }
 
@@ -66,8 +74,8 @@ const storeDispatch = (dispatch, ownProps) => {
     return {
         dispatch,
         onLogOff: () => {
-            
-            dispatch(ActionBuilder("AUTH", "LOGOFF"));
+
+            dispatch(ActionBuilder("AUTH", "LOGOFF", {}));
         }
     }
 };

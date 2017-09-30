@@ -4,32 +4,15 @@ import userInfo from './userInfo';
 import { clearStorage } from '../../../dataStorage/asyncStorage'
 import ConstantBuilder from '../../constantBuilder';
 import ActionBuilder from '../../actionBuilder';
-
-const authLogOff = function* authLogOff() {
-
-    try {
-
-        while (true) {
-
-            yield take(ConstantBuilder("AUTH", "LOGOFF"));
-            yield call(clearStorage);
-            yield put(ActionBuilder("AUTH", "USER_INFO_SET_ITEM", { 'data': { 'isAuthorized': false, 'user_token': null } }));
-            
-        }
-    }
-    catch (e) {
-
-        logError(e);
-    }
-}
+import { logError } from '../../../utils/errorLog';
+import { navigateScreen } from '../../../utils/navigation';
 
 const saga = function* authRootSagas() {
 
     yield [
         fork(registerSagas),
-        fork(userInfo),
-        fork(authLogOff)
-    ] 
+        fork(userInfo)
+    ]
 }
 
 export default saga;  

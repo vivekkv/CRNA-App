@@ -8,18 +8,18 @@ const middleWares = [sagaMiddleware];
 const devTools = window.window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || (() => f => f);
 const enhancers = [applyMiddleware(...middleWares)];
 
-export default function createAppStore(initialValue = {}) {
+export default function createAppStore(reducers, initialValue = {}) {
 
     let store;
 
     if (process.env.NODE_ENV === 'development') {
 
         enhancers.push(devTools());
-        store = createStore(reducers(), initialValue, compose(...enhancers));
+        store = createStore(reducers, initialValue, compose(...enhancers));
 
     } else {
 
-        store = createStore(reducers(), initialValue, compose(...enhancers));
+        store = createStore(reducers, initialValue, compose(...enhancers));
     }
 
     sagaMiddleware.run(rootSaga).done.catch((error) => console.warn(error)); 

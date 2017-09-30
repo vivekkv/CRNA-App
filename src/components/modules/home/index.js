@@ -6,6 +6,11 @@ export default class Home extends React.Component {
 
     render() {
 
-        return <Login {...this.props}/>
+        if (this.props.IsAuthorized) {
+
+            return <Dashboard {...this.props} />
+        }
+
+        return <Dashboard {...this.props} />
     }
 }

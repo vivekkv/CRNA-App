@@ -9,7 +9,7 @@ import { callApi } from '../../../utils/request';
  * 
  * User Information send to server & save the user token into Async Storage
  */
-export function registerNewUser(userData) {
+export function registerNewUser(baseUrl, userData) {
 
     return new Promise((resolve, reject) => {
 

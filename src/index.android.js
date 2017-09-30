@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 import createStore from './redux';
 import Router from './router';
 
-const store = createStore();
+//const store = createStore();
 
 export default Root = () => {
 
-  return (<Provider store={store}><Router /></Provider>);
+  return (<Router />);
 
 }

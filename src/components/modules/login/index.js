@@ -8,9 +8,7 @@ import StyleSheet from '../../../styleSheets/components/login';
 import RegisterButton from '../../presentational/button/registerButton';
 import Register from './register';
 import Footer from './footer';
-import NavBar from './navBar';
 import Header from './header';
-import Intro from './intro';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Login extends React.Component {
@@ -56,9 +54,9 @@ class Login extends React.Component {
             return false;
         }
 
-        if (this.props.data.get("DOB") == null) {
+        if (this.props.data.get("ApplicationNo") == null) {
 
-            Alert.alert("Please enter your date of birth ");
+            Alert.alert("Please enter application number ");
             return false;
         }
 
@@ -68,7 +66,13 @@ class Login extends React.Component {
             return false;
         }
 
-        this.props.dispatch(ActionBuilder("AUTH", "REGISTER", { navigate: this.props.navigation.navigate }));
+        if (this.props.data.get("DOB") == null) {
+
+            Alert.alert("Please enter your date of birth ");
+            return false;
+        }
+
+        this.props.dispatch(ActionBuilder("AUTH", "REGISTER"));
     }
 }
 
