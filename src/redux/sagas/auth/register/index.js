@@ -24,12 +24,13 @@ const registerSaga = function* registerSaga() {
                 'FirstName': state.get("FirstName"),
                 'Dob': state.get("Dob"),
                 'SchoolCode': state.get("SchoolCode"),
+                'ApplicationNo': state.get("ApplicationNo")
             });
 
             if (response.success) {
 
                 yield call(setLocalStorageItem, "userInfo", JSON.stringify({ "isAuthorized": true, "token": response.user_token }));
-                yield put(ActionBuilder("AUTH", "USER_INFO_SET_ITEM", { data: { 'isAuthorized': true, 'user_token': response.user_token } }));
+                yield put(ActionBuilder("ROOT", "SETSTATE", { data: { 'isAuthorized': true, 'user_token': response.user_token } }));
                 yield put(ActionBuilder("AUTH", "REGISTER_CLEARFORM"));
 
             } else {
@@ -52,8 +53,7 @@ const logOffSaga = function* logOffSaga() {
 
             yield take(ConstantBuilder("AUTH", "LOGOFF"));
             yield call(clearStorage, "userInfo");
-            yield put(ActionBuilder("AUTH", "USER_INFO_SET_ITEM", { data: { 'isAuthorized': false, 'user_token': null } }));
-            yield put(ActionBuilder("AUTH", "USER_INFO_SET_ITEM", { data: { 'isAuthorized': false, 'user_token': null } }));
+            yield put(ActionBuilder("ROOT", "SETSTATE", { data: { 'isAuthorized': false, 'user_token': null } }));
         }
     }
     catch (e) {

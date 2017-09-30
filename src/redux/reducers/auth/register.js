@@ -6,7 +6,11 @@ import moment from 'moment';
 var initialState = fromJS({
     'data': {
         'UserAuthenticated': false,
-    }
+        'DOB': moment(),
+        'ApplicationNo': "asdf",
+        'FirstName': "Asdf",
+        "SchoolCode": "asdf"
+    }  
 });
   
 export default function registerReducer(state = initialState, action) {
@@ -22,8 +26,9 @@ export default function registerReducer(state = initialState, action) {
 
         case CLEAR_FORM:
 
-            return state.set("data", state.get("data").set("DOB", null).set("ApplicationNo", null).set("Firstname", null).set("SchoolCode", null));
-
+            return initialState;
+            //return state.set("data", state.get("data").set("DOB", null).set("ApplicationNo", null).set("FirstName", null).set("SchoolCode", null));
+ 
         default:
 
             return state;

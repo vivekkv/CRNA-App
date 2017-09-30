@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import core from './core';
 import auth from './auth';
-import user from './user';
-import nav from './nav';
+import dashboard from './dashboard';
+import root from './root';
 
 export default function (navigationReducer) {
 
     return combineReducers({
-        'core': core,
+        'root': root,
         'auth': auth,
-        'user': user,
-        'nav': navigationReducer
+        'nav': navigationReducer,        
+        'dashboard': dashboard,
     });
+    
 }

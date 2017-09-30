@@ -1,6 +1,7 @@
 import { fromJS, List } from 'immutable';
 import ConstantBuilder from '../../constantBuilder';
 import { buildNewState } from '../../reducerStateMiddleware';
+import { getLocalStorageItem } from '../../../dataStorage/asyncStorage';
 
 var initialState = fromJS({
     'data': {
@@ -8,9 +9,9 @@ var initialState = fromJS({
     }
 });
   
-export default function userInfoReducer(state = initialState, action) {
+export default function rootReducer(state = initialState, action) {
 
-    const SET_FORM = ConstantBuilder("AUTH", "USER_INFO_SET_ITEM");
+    const SET_FORM = ConstantBuilder("ROOT", "SETSTATE");
 
     switch (action.type) {
 

@@ -5,12 +5,17 @@ import Home from '../modules/home';
 import Styles from '../../styleSheets/components/root';
 import ActionBuilder from '../../redux/actionBuilder';
 import { setNavigation } from '../../utils/navigation';
+import { getLocalStorageItem } from '../../dataStorage/asyncStorage';
 
 class Root extends React.Component {
 
     static navigationOptions = {
         header: null
     };
+
+    constructor(props) {
+        super(props);
+    }
 
     render() {
 
@@ -20,17 +25,12 @@ class Root extends React.Component {
 
         </View>)
     }
-
-    componentDidMount() {
-
-        this.props.dispatch(ActionBuilder("ROOT", "PAGE_LOADED"));
-    }
 }
 
 const storeState = (state, ownProps) => {
-        
+
     return {
-        'data': state.auth.userInfo.get("data")
+        'data': state.root.get("data")
     }
 }
 

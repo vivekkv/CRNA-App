@@ -48,7 +48,7 @@ class Login extends React.Component {
 
     onRegister() {
 
-        if (this.props.data.get("Firstname") == null) {
+        if (this.props.data.get("FirstName") == null) {
 
             Alert.alert("Please enter your firstname ");
             return false;

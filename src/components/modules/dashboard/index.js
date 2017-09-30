@@ -66,7 +66,7 @@ class Dashboard extends React.Component {
 const storeState = (state, ownProps) => {
 
     return {
-        'data': Map(state.user.dashboard.get("data"))
+        'data': Map(state.dashboard.get("data"))
     }
 }
 

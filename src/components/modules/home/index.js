@@ -11,6 +11,6 @@ export default class Home extends React.Component {
             return <Dashboard {...this.props} />
         }
 
-        return <Dashboard {...this.props} />
+        return <Login {...this.props} />
     }
 }

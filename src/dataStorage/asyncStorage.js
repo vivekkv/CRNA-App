@@ -26,7 +26,7 @@ export function getLocalStorageItem(name) {
             AsyncStorage.getItem(name).then((data) => {
 
                 resolve(data);
-            })
+            });
 
         } catch (e) {
 
