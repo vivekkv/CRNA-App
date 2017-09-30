@@ -11,7 +11,7 @@ import ConstantBuilder from './redux/constantBuilder';
 import { getLocalStorageItem } from './dataStorage/asyncStorage';
 
 const AppNavigator = StackNavigator({
-  'Root': { screen: RootComponent },
+  'Main': { screen: RootComponent },
   'Dashboard': { screen: Dashboard }
 });
 
@@ -22,33 +22,24 @@ class App extends React.Component {
     return (<AppNavigator />);
 
   }
-
 }
 
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Root'));
+const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Main'));
 
 const navReducer = (state = initialState, action) => {
 
-  const LOGOFF = ConstantBuilder("AUTH", "LOGOFFTEST");
   let nextState = null;
 
   switch (action.type) {
 
-    case LOGOFF:
-
-      nextState = AppNavigator.router.getStateForAction(
-
-        NavigationActions.navigate({ routeName: 'Dashboard' }), state
-      );
-      break;
     default:
 
       nextState = AppNavigator.router.getStateForAction(action, state);
+
       break;
   }
 
   return nextState || state;
-  
 };
 
 const appReducer = CreateReducers(navReducer);
@@ -63,6 +54,7 @@ const AppWithNavigationState = connect(mapStateToProps)(App);
 export default class Root extends React.Component {
 
   render() {
+
     return (<Provider store={store}>
       <AppWithNavigationState />
     </Provider>);

@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, View, Text } from 'react-native';
-import Home from '../modules/home';
 import Styles from '../../styleSheets/components/root';
 import ActionBuilder from '../../redux/actionBuilder';
 import { setNavigation } from '../../utils/navigation';
 import { getLocalStorageItem } from '../../dataStorage/asyncStorage';
+import Dashboard from '../modules/dashboard';
+import { AsyncStorage } from 'react-native';
+import Login from '../modules/login';
 
 class Root extends React.Component {
 
@@ -19,11 +21,25 @@ class Root extends React.Component {
 
     render() {
 
+        if(!this.props.data.get("stateReady")) {
+
+            return <Text>Loading</Text>
+        }
+
         return (<View style={{ flex: 1, padding: 0, margin: 0 }}>
 
-            <Home IsAuthorized={this.props.data.get("isAuthorized")} {...this.props} />
-
+            {  
+                this.props.data.get("isAuthorized") ?
+                    <Dashboard  />
+                    : <Login />
+            }
+   
         </View>)
+    }
+
+    componentDidMount() {
+
+        this.props.dispatch(ActionBuilder("AUTH", "CHECK_USER_AUTHENTICAION"));
     }
 }
 

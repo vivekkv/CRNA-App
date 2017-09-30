@@ -5,7 +5,8 @@ import { getLocalStorageItem } from '../../../dataStorage/asyncStorage';
 
 var initialState = fromJS({
     'data': {
-        'isAuthorized': false
+        'isAuthorized': false,
+        'stateReady': false
     }
 });
   

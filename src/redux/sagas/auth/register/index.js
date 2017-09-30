@@ -29,7 +29,7 @@ const registerSaga = function* registerSaga() {
 
             if (response.success) {
 
-                yield call(setLocalStorageItem, "userInfo", JSON.stringify({ "isAuthorized": true, "token": response.user_token }));
+                yield call(setLocalStorageItem, "user", JSON.stringify({ "isAuthorized": true, "token": response.user_token }));
                 yield put(ActionBuilder("ROOT", "SETSTATE", { data: { 'isAuthorized': true, 'user_token': response.user_token } }));
                 yield put(ActionBuilder("AUTH", "REGISTER_CLEARFORM"));
 

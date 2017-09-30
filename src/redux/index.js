@@ -22,7 +22,7 @@ export default function createAppStore(reducers, initialValue = {}) {
         store = createStore(reducers, initialValue, compose(...enhancers));
     }
 
-    sagaMiddleware.run(rootSaga).done.catch((error) => console.warn(error)); 
+    sagaMiddleware.run(rootSaga).done.catch((error) => console.warn(error));
 
     return store
 }
