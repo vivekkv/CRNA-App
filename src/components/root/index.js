@@ -21,19 +21,17 @@ class Root extends React.Component {
 
     render() {
 
-        if(!this.props.data.get("stateReady")) {
+        if (!this.props.data.get("stateReady")) {
 
             return <Text>Loading</Text>
         }
 
         return (<View style={{ flex: 1, padding: 0, margin: 0 }}>
 
-            {  
-                this.props.data.get("isAuthorized") ?
-                    <Dashboard  />
-                    : <Login />
-            }
-   
+                {
+                    this.props.data.get("isAuthorized") ? <Dashboard /> : <Login />
+                }
+
         </View>)
     }
 
